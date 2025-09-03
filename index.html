@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hành Trình Thiền Định: Khám Phá Khoa Học &amp; Minh Triết</title>
     
-    <!-- === BẮT ĐẦU ĐOẠN CODE CHO FACEBOOK (ĐÃ ĐIỀN THÔNG TIN) === -->
+    <!-- === CODE CHO FACEBOOK === -->
     <meta property="og:title" content="Hành Trình Thiền Định: Khám Phá Khoa Học & Minh Triết" />
     <meta property="og:description" content="Một bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông." />
     <meta property="og:type" content="website" />
@@ -13,7 +13,6 @@
     <meta property="og:image" content="https://dhr-phucthanh.github.io/Dhyana-Samadhi_THIEN-DINH/preview.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <!-- === KẾT THÚC ĐOẠN CODE CHO FACEBOOK === -->
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -62,13 +61,37 @@
 </head>
 <body class="text-gray-800">
 
+    <!-- === BẮT ĐẦU PHẦN THÊM MỚI CHO ÂM THANH === -->
+
+    <!-- 1. Thẻ Audio để load nhạc. Nó sẽ bị ẩn đi. -->
+    <audio id="background-music" loop>
+        <!-- THAY ĐỔI TÊN FILE NẾU CẦN -->
+        <source src="nhac-nen-thien-dinh.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ file âm thanh.
+    </audio>
+
+    <!-- 2. Nút bấm để điều khiển nhạc, nằm ở góc dưới bên phải -->
+    <button id="music-toggle" class="fixed bottom-5 right-5 z-50 p-3 bg-white rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-200 focus:outline-none">
+        <!-- Icon loa đang tắt (mặc định) -->
+        <svg id="icon-muted" class="w-6 h-6 text-gray-700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l-2.25 2.25M19.5 12l2.25-2.25M12.75 4.97v14.06M6.375 9.75l-1.5-1.5m1.5 1.5.75-1.5m-.75 1.5L4.5 9.75m1.5-1.5.75 1.5m0 0L6.75 12m-1.5-1.5L5.25 8.25m9 3.75-3-3m3 3-3 3" />
+        </svg>
+        <!-- Icon loa đang bật (bị ẩn đi lúc đầu) -->
+        <svg id="icon-playing" class="w-6 h-6 text-blue-600 hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+        </svg>
+    </button>
+    <!-- === KẾT THÚC PHẦN THÊM MỚI CHO ÂM THANH === -->
+
+
     <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-12 px-4">
+        <!-- ... nội dung header giữ nguyên ... -->
         <h1 class="text-4xl md:text-5xl font-bold mb-2">Hành Trình Thiền Định</h1>
         <p class="text-lg md:text-xl max-w-3xl mx-auto">Một bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông.</p>
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
-
+        <!-- ... toàn bộ nội dung trong <main> giữ nguyên ... -->
         <section class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Thiền Định Là Gì?</h2>
             <p class="max-w-4xl mx-auto text-lg">Thiền định là một phương pháp thực hành cổ xưa nhằm rèn luyện tâm trí, đưa tâm trở về với trạng thái tĩnh tại, sáng suốt và bình an trong giây phút hiện tại. Đây không chỉ là một kỹ thuật thư giãn mà còn là một con đường sâu sắc để thấu hiểu bản thân và thực tại, được khoa học hiện đại chứng minh mang lại vô vàn lợi ích cho sức khỏe thể chất và tinh thần.</p>
@@ -91,7 +114,6 @@
                 <p class="mt-1 text-gray-600">Chỉ sau vài tuần thực hành, khả năng tập trung và duy trì chú ý trong công việc và học tập đã tăng lên đáng kể.</p>
             </div>
         </section>
-
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-white rounded-xl shadow-lg p-6">
@@ -128,7 +150,6 @@
                     </div>
                 </div>
             </div>
-
 
             <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
                 <h3 class="text-2xl font-bold text-center mb-4">Con Đường Giác Ngộ: Vượt Trên Sức Khỏe</h3>
@@ -182,6 +203,27 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // === PHẦN JAVASCRIPT ĐIỀU KHIỂN NHẠC NỀN ===
+            const music = document.getElementById('background-music');
+            const musicToggle = document.getElementById('music-toggle');
+            const iconMuted = document.getElementById('icon-muted');
+            const iconPlaying = document.getElementById('icon-playing');
+            let isPlaying = false;
+
+            musicToggle.addEventListener('click', () => {
+                if (isPlaying) {
+                    music.pause();
+                    iconMuted.classList.remove('hidden');
+                    iconPlaying.classList.add('hidden');
+                } else {
+                    music.play();
+                    iconMuted.classList.add('hidden');
+                    iconPlaying.classList.remove('hidden');
+                }
+                isPlaying = !isPlaying;
+            });
+
+            // === PHẦN JAVASCRIPT CHO BIỂU ĐỒ (GIỮ NGUYÊN) ===
             const wrapLabel = (str, maxWidth) => {
                 if (str.length <= maxWidth) {
                     return str;
