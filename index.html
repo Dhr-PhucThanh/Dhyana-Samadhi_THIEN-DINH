@@ -57,6 +57,27 @@
             font-weight: 700;
             line-height: 1;
         }
+
+        /* === BƯỚC 1: THÊM ĐOẠN CSS NÀY VÀO === */
+        /* Định nghĩa class để highlight link */
+        .link-noi-bat {
+            background-color: #fffb8f; /* Màu vàng của bút highlight */
+            padding: 2px 8px;          /* Thêm một chút đệm xung quanh chữ */
+            border-radius: 5px;        /* Bo tròn góc cho mềm mại */
+            font-weight: 700;          /* In đậm chữ lên */
+            color: #1f2937;            /* Đổi màu chữ thành xám đậm để dễ đọc */
+            text-decoration: none;     /* Bỏ gạch chân mặc định */
+            margin-left: 8px;          /* Tạo một chút khoảng cách với dòng chữ phía trước */
+            display: inline-block;     /* Giúp padding và margin hoạt động tốt hơn */
+            transition: background-color 0.2s; /* Thêm hiệu ứng chuyển màu mượt mà */
+        }
+
+        /* Thêm hiệu ứng khi di chuột vào link */
+        .link-noi-bat:hover {
+            background-color: #fde047; /* Đổi màu vàng đậm hơn khi di chuột vào */
+        }
+        /* === KẾT THÚC BƯỚC 1 === */
+
     </style>
 </head>
 <body class="text-gray-800">
@@ -68,12 +89,6 @@
     </audio>
 
     <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-12 px-4">
-        <!-- 
-          *** THAY ĐỔI CHÍNH NẰM Ở ĐÂY ***
-          1. Tôi đã tạo một container div với inline-flex để đặt Tiêu đề và Nút Loa cạnh nhau.
-          2. Nút Loa đã được di chuyển vào bên trong header.
-          3. CSS của Nút Loa đã được thay đổi để phù hợp với nền xanh (trong suốt, icon màu trắng).
-        -->
         <div class="inline-flex items-center justify-center gap-x-4 mb-2">
             <h1 class="text-4xl md:text-5xl font-bold">Hành Trình Thiền Định</h1>
             <button id="music-toggle" class="p-3 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 focus:outline-none">
@@ -157,7 +172,7 @@
                 <div class="flex flex-col md:flex-row justify-center items-center">
                     <div class="flowchart-step">
                         <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3">
-                           <span class="text-4xl">戒</span>
+                             <span class="text-4xl">戒</span>
                         </div>
                         <h4 class="text-xl font-semibold">Giới (Sīla)</h4>
                         <p class="text-gray-600 mt-1">Nền tảng đạo đức, sống thiện lành, không làm hại mình, hại người.</p>
@@ -166,7 +181,7 @@
                      <div class="transform rotate-90 md:hidden flowchart-arrow">→</div>
                     <div class="flowchart-step">
                         <div class="w-24 h-24 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-3">
-                             <span class="text-4xl">定</span>
+                              <span class="text-4xl">定</span>
                         </div>
                         <h4 class="text-xl font-semibold">Định (Samādhi)</h4>
                         <p class="text-gray-600 mt-1">Phát triển sự tập trung, tâm an trụ, vắng lặng, không bị phóng dật.</p>
@@ -175,7 +190,7 @@
                      <div class="transform rotate-90 md:hidden flowchart-arrow">→</div>
                     <div class="flowchart-step">
                        <div class="w-24 h-24 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-3">
-                             <span class="text-4xl">慧</span>
+                              <span class="text-4xl">慧</span>
                         </div>
                         <h4 class="text-xl font-semibold">Tuệ (Paññā)</h4>
                         <p class="text-gray-600 mt-1">Trí tuệ thấu hiểu bản chất của vạn vật, thấy rõ Vô thường, Khổ, Vô ngã.</p>
@@ -193,7 +208,13 @@
                     <li><span class="font-semibold">Quan sát Đảnh Đầu (Mahayana & Vajrayana):</span> Đưa sự chú ý đến Đảnh Đầu cùng với Niệm và Nghe câu chú. Cảm nhận và Trụ miên mật đến các hiện tượng; nóng hoặc mát, hoặc trì nặng, châm chích trên Đảnh Đầu.</li>
                     <li><span class="font-semibold">Khi tâm lang thang:</span> Đừng lo lắng. Đây là điều tự nhiên. Nhẹ nhàng nhận biết và rồi lại đưa sự chú ý trở lại với hơi thở, hoặc câu niệm chú với nhịp điệu liên tục và đồng thời bám trụ Đảnh Đầu (Mahayana & Vajrayana)</li>
                     <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Dần dần tăng thời gian khi bạn cảm thấy thoải mái hơn. Sự kiên trì là chìa khóa.</li>
-                    <li><span class="font-semibold">Pháp thực hành theo trường phái "Mahayana & Vajrayana" tham khảo:<a href="https://bit.ly/Dhyana-Samadhi"target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
+                    
+                    <!-- === BƯỚC 2: THÊM CLASS VÀO THẺ <a> CỦA BẠN === -->
+                    <li><span class="font-semibold">Pháp thực hành theo trường phái "Mahayana & Vajrayana" tham khảo:</span>
+                        <a href="https://bit.ly/Dhyana-Samadhi" target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
+                    </li>
+                    <!-- === KẾT THÚC BƯỚC 2 === -->
+
                 </ol>
             </div>
         </div>
@@ -284,7 +305,7 @@
                             callback: function(value) {
                                 return value + '%';
                             },
-                            font: {
+                             font: {
                                 family: "'Be Vietnam Pro', sans-serif",
                             }
                         },
@@ -360,9 +381,9 @@
                         legend: {
                              position: 'bottom',
                              labels: {
-                                font: {
-                                    family: "'Be Vietnam Pro', sans-serif"
-                                }
+                                 font: {
+                                     family: "'Be Vietnam Pro', sans-serif"
+                                 }
                             }
                         }
                     },
@@ -373,35 +394,28 @@
                     },
                      scales: {
                         r: {
-                           angleLines: {
-                             color: '#e5e7eb'
-                           },
-                           grid: {
-                             color: '#e5e7eb'
-                           },
-                           pointLabels: {
-                             font: {
-                               size: 14,
-                               family: "'Be Vietnam Pro', sans-serif"
-                             }
-                           },
-                           ticks: {
-                             backdropColor: 'rgba(0,0,0,0)',
-                             color: '#6b7280'
-                           }
+                          angleLines: {
+                            color: '#e5e7eb'
+                          },
+                          grid: {
+                            color: '#e5e7eb'
+                          },
+                          pointLabels: {
+                            font: {
+                              size: 14,
+                              family: "'Be Vietnam Pro', sans-serif"
+                            }
+                          },
+                          ticks: {
+                            backdropColor: 'rgba(0,0,0,0)',
+                            color: '#6b7280'
+                          }
                         }
-                     }
+                      }
                 }
             });
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
