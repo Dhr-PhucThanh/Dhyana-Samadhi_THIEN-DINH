@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hành Trình Thiền Định: Khám Phá Khoa Học &amp; Minh Triết</title>
     
-    <!-- === CODE CHO FACEBOOK === -->
     <meta property="og:title" content="Hành Trình Thiền Định: Khám Phá Khoa Học & Minh Triết" />
     <meta property="og:description" content="Một bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông." />
     <meta property="og:type" content="website" />
@@ -70,19 +69,29 @@
             margin-left: 8px;          /* Tạo một chút khoảng cách với dòng chữ phía trước */
             display: inline-block;     /* Giúp padding và margin hoạt động tốt hơn */
             transition: background-color 0.2s; /* Thêm hiệu ứng chuyển màu mượt mà */
+
+            /* === BƯỚC 4: ÁP DỤNG ANIMATION VÀO CLASS === */
+            animation: blink-animation 1.5s ease-in-out infinite;
         }
 
         /* Thêm hiệu ứng khi di chuột vào link */
         .link-noi-bat:hover {
             background-color: #fde047; /* Đổi màu vàng đậm hơn khi di chuột vào */
+            animation-play-state: paused; /* Tạm dừng hiệu ứng nhấp nháy khi di chuột vào */
         }
-        /* === KẾT THÚC BƯỚC 1 === */
+        
+        /* === BƯỚC 3: THÊM KEYFRAMES CHO HIỆU ỨNG NHẤP NHÁY === */
+        @keyframes blink-animation {
+            0%   { background-color: #fffb8f; }
+            50%  { background-color: #facc15; } /* Một màu vàng đậm hơn nữa để nổi bật */
+            100% { background-color: #fffb8f; }
+        }
+        /* === KẾT THÚC BƯỚC 1, 3, 4 === */
 
     </style>
 </head>
 <body class="text-gray-800">
 
-    <!-- Thẻ Audio không thay đổi -->
     <audio id="background-music" loop>
         <source src="nhac-nen-thien-dinh.mp3" type="audio/mpeg">
         Trình duyệt của bạn không hỗ trợ file âm thanh.
@@ -92,11 +101,9 @@
         <div class="inline-flex items-center justify-center gap-x-4 mb-2">
             <h1 class="text-4xl md:text-5xl font-bold">Hành Trình Thiền Định</h1>
             <button id="music-toggle" class="p-3 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 focus:outline-none">
-                <!-- Icon loa đang tắt (mặc định) -->
                 <svg id="icon-muted" class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l-2.25 2.25M19.5 12l2.25-2.25M12.75 4.97v14.06M6.375 9.75l-1.5-1.5m1.5 1.5.75-1.5m-.75 1.5L4.5 9.75m1.5-1.5.75 1.5m0 0L6.75 12m-1.5-1.5L5.25 8.25m9 3.75-3-3m3 3-3 3" />
                 </svg>
-                <!-- Icon loa đang bật (bị ẩn đi lúc đầu) -->
                 <svg id="icon-playing" class="w-6 h-6 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                 </svg>
@@ -106,7 +113,6 @@
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
-        <!-- ... toàn bộ nội dung trong <main> giữ nguyên ... -->
         <section class="text-center mb-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Thiền Định Là Gì?</h2>
             <p class="max-w-4xl mx-auto text-lg">Thiền định là một phương pháp thực hành cổ xưa nhằm rèn luyện tâm trí, đưa tâm trở về với trạng thái tĩnh tại, sáng suốt và bình an trong giây phút hiện tại. Đây không chỉ là một kỹ thuật thư giãn mà còn là một con đường sâu sắc để thấu hiểu bản thân và thực tại, được khoa học hiện đại chứng minh mang lại vô vàn lợi ích cho sức khỏe thể chất và tinh thần.</p>
@@ -209,13 +215,10 @@
                     <li><span class="font-semibold">Khi tâm lang thang:</span> Đừng lo lắng. Đây là điều tự nhiên. Nhẹ nhàng nhận biết và rồi lại đưa sự chú ý trở lại với hơi thở (đối với Theravada), hoặc câu niệm chú với nhịp điệu liên tục và đồng thời bám trụ Đảnh Đầu (đối với Mahayana & Vajrayana)</li>
                     <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Dần dần tăng thời gian khi bạn cảm thấy thoải mái hơn. Sự kiên trì là chìa khóa.</li>
                     
-                    <!-- === BƯỚC 2: THÊM CLASS VÀO THẺ <a> CỦA BẠN === -->
                     <li><span class="font-semibold">Pháp thực hành theo trường phái "Mahayana & Vajrayana" tham khảo:</span>
                         <a href="https://dhr-phucthanh.github.io/Samatha-Samapatti-Dhyana-THIEN-QUAN-CHI/" target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
                     </li>
-                    <!-- === KẾT THÚC BƯỚC 2 === -->
-
-                </ol>
+                    </ol>
             </div>
         </div>
     </main>
@@ -418,6 +421,3 @@
     </script>
 </body>
 </html>
-
-
-
