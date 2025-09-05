@@ -56,38 +56,27 @@
             font-weight: 700;
             line-height: 1;
         }
-
-        /* === BƯỚC 1: THÊM ĐOẠN CSS NÀY VÀO === */
-        /* Định nghĩa class để highlight link */
         .link-noi-bat {
-            background-color: #fffb8f; /* Màu vàng của bút highlight */
-            padding: 2px 8px;          /* Thêm một chút đệm xung quanh chữ */
-            border-radius: 5px;        /* Bo tròn góc cho mềm mại */
-            font-weight: 700;          /* In đậm chữ lên */
-            color: #1f2937;            /* Đổi màu chữ thành xám đậm để dễ đọc */
-            text-decoration: none;     /* Bỏ gạch chân mặc định */
-            margin-left: 8px;          /* Tạo một chút khoảng cách với dòng chữ phía trước */
-            display: inline-block;     /* Giúp padding và margin hoạt động tốt hơn */
-            transition: background-color 0.2s; /* Thêm hiệu ứng chuyển màu mượt mà */
-
-            /* === BƯỚC 4: ÁP DỤNG ANIMATION VÀO CLASS === */
+            background-color: #fffb8f;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: 700;
+            color: #1f2937;
+            text-decoration: none;
+            margin-left: 8px;
+            display: inline-block;
+            transition: background-color 0.2s;
             animation: blink-animation 1.5s ease-in-out infinite;
         }
-
-        /* Thêm hiệu ứng khi di chuột vào link */
         .link-noi-bat:hover {
-            background-color: #fde047; /* Đổi màu vàng đậm hơn khi di chuột vào */
-            animation-play-state: paused; /* Tạm dừng hiệu ứng nhấp nháy khi di chuột vào */
+            background-color: #fde047;
+            animation-play-state: paused;
         }
-        
-        /* === BƯỚC 3: THÊM KEYFRAMES CHO HIỆU ỨNG NHẤP NHÁY === */
         @keyframes blink-animation {
-            0%   { background-color: #fffb8f; }
-            50%  { background-color: #facc15; } /* Một màu vàng đậm hơn nữa để nổi bật */
+            0% { background-color: #fffb8f; }
+            50% { background-color: #facc15; }
             100% { background-color: #fffb8f; }
         }
-        /* === KẾT THÚC BƯỚC 1, 3, 4 === */
-
     </style>
 </head>
 <body class="text-gray-800">
@@ -113,7 +102,7 @@
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
-        <section class="text-center mb-12">
+        <section class="text-center my-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Thiền Định Là Gì?</h2>
             <p class="max-w-4xl mx-auto text-lg">Thiền định là một phương pháp thực hành cổ xưa nhằm rèn luyện tâm trí, đưa tâm trở về với trạng thái tĩnh tại, sáng suốt và bình an trong giây phút hiện tại. Đây không chỉ là một kỹ thuật thư giãn mà còn là một con đường sâu sắc để thấu hiểu bản thân và thực tại, được khoa học hiện đại chứng minh mang lại vô vàn lợi ích cho sức khỏe thể chất và tinh thần.</p>
         </section>
@@ -206,19 +195,32 @@
 
             <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
                 <h3 class="text-2xl font-bold text-center mb-4">Bắt Đầu Hành Trình Của Bạn</h3>
-                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-600">Bạn không cần phải trở thành một chuyên gia để bắt đầu. Chỉ với vài phút mỗi ngày, bạn có thể bắt đầu gặt hái những lợi ích đầu tiên. Hãy thử bài tập thiền chánh niệm hơi thở đơn giản sau:</p>
-                <ol class="list-decimal list-inside space-y-4 max-w-2xl mx-auto text-lg">
-                    <li><span class="font-semibold">Chọn một nơi yên tĩnh:</span> Ngồi thoải mái trên ghế hoặc đệm, giữ lưng thẳng nhưng không căng cứng.</li>
-                    <li><span class="font-semibold">Nhắm mắt nhẹ nhàng:</span> Thả lỏng cơ thể, đặc biệt là vai, cổ và cơ mặt.</li>
-                    <li><span class="font-semibold">Quan sát hơi thở (đối với Theravada):</span> Đưa sự chú ý đến hơi thở tự nhiên của bạn. Cảm nhận không khí đi vào và đi ra qua mũi.</li>
-                    <li><span class="font-semibold">Quan sát Đảnh Đầu (đối với Mahayana & Vajrayana):</span> Đưa sự chú ý đến Đảnh Đầu cùng với Niệm và Nghe câu chú. Cảm nhận và Trụ miên mật đến các hiện tượng; nóng hoặc mát, hoặc trì nặng, châm chích trên Đảnh Đầu.</li>
-                    <li><span class="font-semibold">Khi tâm lang thang:</span> Đừng lo lắng. Đây là điều tự nhiên. Nhẹ nhàng nhận biết và rồi lại đưa sự chú ý trở lại với hơi thở (đối với Theravada), hoặc câu niệm chú với nhịp điệu liên tục và đồng thời bám trụ Đảnh Đầu (đối với Mahayana & Vajrayana)</li>
-                    <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Dần dần tăng thời gian khi bạn cảm thấy thoải mái hơn. Sự kiên trì là chìa khóa.</li>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-600">Bạn không cần phải trở thành một chuyên gia để bắt đầu. Chỉ với vài phút mỗi ngày, bạn có thể bắt đầu gặt hái những lợi ích đầu tiên. Hãy thử bài tập thiền chánh niệm hơi thở đơn giản sau:</p>
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center">
                     
-                    <li><span class="font-semibold">Pháp thực hành theo trường phái "Mahayana & Vajrayana" tham khảo:</span>
-                        <a href="https://dhr-phucthanh.github.io/Samatha-Samapatti-Dhyana-THIEN-QUAN-CHI/" target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
-                    </li>
-                    </ol>
+                    <div class="w-full md:w-3/4">
+                        <ol class="list-decimal list-inside space-y-4 text-lg">
+                            <li><span class="font-semibold">Chọn một nơi yên tĩnh:</span> Ngồi thoải mái trên ghế hoặc đệm, giữ lưng thẳng nhưng không căng cứng.</li>
+                            <li><span class="font-semibold">Nhắm mắt nhẹ nhàng:</span> Thả lỏng cơ thể, đặc biệt là vai, cổ và cơ mặt.</li>
+                            <li><span class="font-semibold">Quan sát hơi thở (đối với Theravada):</span> Đưa sự chú ý đến hơi thở tự nhiên của bạn. Cảm nhận không khí đi vào và đi ra qua mũi.</li>
+                            <li><span class="font-semibold">Quan sát Đảnh Đầu (đối với Mahayana & Vajrayana):</span> Đưa sự chú ý đến Đảnh Đầu cùng với Niệm và Nghe câu chú. Cảm nhận và Trụ miên mật đến các hiện tượng; nóng hoặc mát, hoặc trì nặng, châm chích trên Đảnh Đầu.</li>
+                            <li><span class="font-semibold">Khi tâm lang thang:</span> Đừng lo lắng. Đây là điều tự nhiên. Nhẹ nhàng nhận biết và rồi lại đưa sự chú ý trở lại với hơi thở hoặc câu niệm chú.</li>
+                            <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Dần dần tăng thời gian khi bạn cảm thấy thoải mái hơn. Sự kiên trì là chìa khóa.</li>
+                            <li><span class="font-semibold">Pháp thực hành tham khảo:</span>
+                                <a href="https://dhr-phucthanh.github.io/Samatha-Samapatti-Dhyana-THIEN-QUAN-CHI/" target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="w-full md:w-1/4">
+                        <video class="rounded-lg shadow-lg w-full" autoplay loop muted playsinline>
+                            <source src="https://dhr-phucthanh.github.io/Dhyana-Samadhi_THIEN-DINH/meditation-video.webm" type="video/webm">
+                            Trình duyệt của bạn không hỗ trợ phát video.
+                        </video>
+                    </div>
+
+                </div>
             </div>
         </div>
     </main>
