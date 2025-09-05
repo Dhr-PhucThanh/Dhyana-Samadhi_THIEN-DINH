@@ -77,6 +77,26 @@
             50% { background-color: #facc15; }
             100% { background-color: #fffb8f; }
         }
+
+        /* CSS để đặt logo vào vị trí bạn đã đánh dấu */
+        .header-logo {
+            position: absolute;
+            top: 2rem; 
+            left: 18rem; 
+            height: 80px; 
+            width: 80px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+        }
+        @media (min-width: 768px) {
+            .header-logo {
+                top: 3rem;
+                left: 20rem;
+                height: 100px;
+                width: 100px;
+            }
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -86,7 +106,10 @@
         Trình duyệt của bạn không hỗ trợ file âm thanh.
     </audio>
 
-    <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-12 px-4">
+    <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center py-12 px-4 relative">
+        
+        <img src="https://github.com/Dhr-PhucThanh/Dhyana-Samadhi_THIEN-DINH/blob/main/Lotus.jpg?raw=true" alt="Lotus Logo" class="header-logo">
+        
         <div class="inline-flex items-center justify-center gap-x-4 mb-2">
             <h1 class="text-4xl md:text-5xl font-bold">Hành Trình Thiền Định</h1>
             <button id="music-toggle" class="p-3 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 focus:outline-none">
