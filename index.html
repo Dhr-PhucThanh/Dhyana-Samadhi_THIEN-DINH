@@ -230,6 +230,10 @@
 
     <footer class="text-center py-8 bg-gray-800 text-white mt-12">
         <p>Bắt đầu hành trình của bạn ngay hôm nay để có một cuộc sống bình an và trọn vẹn hơn.</p>
+        
+        <p class="mt-4 text-sm text-gray-400">
+            Khách thăm viếng: <span id="visitor-count">Đang tải...</span>
+        </p>
     </footer>
 
     <script>
@@ -424,5 +428,49 @@
             });
         });
     </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const countKey = 'dhr-phucthanh.github.io-v1'; 
+            const visitedFlag = 'hasVisitedPage-v1';
+            const countElement = document.getElementById('visitor-count');
+
+            function updateCount(count) {
+                if (countElement) {
+                    countElement.textContent = count;
+                }
+            }
+            
+            function handleError() {
+                console.error("Lỗi khi kết nối với dịch vụ đếm.");
+                if (countElement && countElement.parentElement) {
+                    countElement.parentElement.style.display = 'none';
+                }
+            }
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const isDevMode = urlParams.has('dev');
+
+            const hasVisited = localStorage.getItem(visitedFlag);
+
+            if (!hasVisited && !isDevMode) {
+                fetch(`https://api.countapi.xyz/hit/${countKey}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateCount(data.value);
+                        localStorage.setItem(visitedFlag, 'true');
+                    })
+                    .catch(handleError);
+            } else {
+                fetch(`https://api.countapi.xyz/get/${countKey}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        updateCount(data.value || 0);
+                    })
+                    .catch(handleError);
+            }
+        });
+    </script>
+
 </body>
 </html>
