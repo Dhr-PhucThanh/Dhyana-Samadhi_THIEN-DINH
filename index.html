@@ -235,31 +235,37 @@
         </p>
     </footer>
 
+    
+
+<script data-goatcounter="https://dhr-phucthanh.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // ... Mã script cho nút nhạc và biểu đồ ...
             const music = document.getElementById('background-music');
             const musicToggle = document.getElementById('music-toggle');
             const iconMuted = document.getElementById('icon-muted');
             const iconPlaying = document.getElementById('icon-playing');
             let isPlaying = false;
 
-            musicToggle.addEventListener('click', () => {
-                if (isPlaying) {
-                    music.pause();
-                    iconMuted.classList.remove('hidden');
-                    iconPlaying.classList.add('hidden');
-                } else {
-                    music.play();
-                    iconMuted.classList.add('hidden');
-                    iconPlaying.classList.remove('hidden');
-                }
-                isPlaying = !isPlaying;
-            });
-
+            if (musicToggle) {
+                musicToggle.addEventListener('click', () => {
+                    if (isPlaying) {
+                        music.pause();
+                        iconMuted.classList.remove('hidden');
+                        iconPlaying.classList.add('hidden');
+                    } else {
+                        music.play();
+                        iconMuted.classList.add('hidden');
+                        iconPlaying.classList.remove('hidden');
+                    }
+                    isPlaying = !isPlaying;
+                });
+            }
+            
             const wrapLabel = (str, maxWidth) => {
-                if (str.length <= maxWidth) {
-                    return str;
-                }
+                if (str.length <= maxWidth) return str;
                 const words = str.split(' ');
                 const lines = [];
                 let currentLine = '';
@@ -277,11 +283,8 @@
             const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
                 let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                    return label.join(' ');
-                } else {
-                    return label;
-                }
+                if (Array.isArray(label)) return label.join(' ');
+                return label;
             };
 
             const commonChartOptions = {
@@ -290,187 +293,117 @@
                 plugins: {
                     legend: {
                         position: 'bottom',
-                        labels: {
-                            font: {
-                                family: "'Be Vietnam Pro', sans-serif",
-                                size: 14,
-                            }
-                        }
+                        labels: { font: { family: "'Be Vietnam Pro', sans-serif", size: 14, }}
                     },
                     tooltip: {
-                        callbacks: {
-                            title: tooltipTitleCallback
-                        },
-                        bodyFont: {
-                            family: "'Be Vietnam Pro', sans-serif",
-                        },
-                        titleFont: {
-                            family: "'Be Vietnam Pro', sans-serif",
-                        }
+                        callbacks: { title: tooltipTitleCallback },
+                        bodyFont: { family: "'Be Vietnam Pro', sans-serif", },
+                        titleFont: { family: "'Be Vietnam Pro', sans-serif", }
                     }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
-                         ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            },
-                             font: {
-                                family: "'Be Vietnam Pro', sans-serif",
-                            }
+                        ticks: {
+                            callback: function(value) { return value + '%'; },
+                            font: { family: "'Be Vietnam Pro', sans-serif", }
                         },
-                        grid: {
-                            color: '#e5e7eb'
-                        }
+                        grid: { color: '#e5e7eb' }
                     },
                     x: {
-                        ticks: {
-                           font: {
-                                family: "'Be Vietnam Pro', sans-serif",
-                            }
-                        },
-                        grid: {
-                            display: false
-                        }
+                        ticks: { font: { family: "'Be Vietnam Pro', sans-serif", } },
+                        grid: { display: false }
                     }
                 }
             };
 
-            const mentalHealthCtx = document.getElementById('mentalHealthChart').getContext('2d');
-            new Chart(mentalHealthCtx, {
-                type: 'bar',
-                data: {
-                    labels: ['Giảm Stress', 'Giảm Lo Âu', wrapLabel('Giảm triệu chứng Trầm Cảm', 16), wrapLabel('Tăng Cảm Xúc Tích Cực', 16)],
-                    datasets: [{
-                        label: 'Mức Độ Cải Thiện (%)',
-                        data: [40, 26, 22, 35],
-                        backgroundColor: [
-                            'rgba(59, 130, 246, 0.7)',
-                            'rgba(139, 92, 246, 0.7)',
-                            'rgba(16, 185, 129, 0.7)',
-                            'rgba(239, 68, 68, 0.7)'
-                        ],
-                        borderColor: [
-                            'rgba(59, 130, 246, 1)',
-                            'rgba(139, 92, 246, 1)',
-                            'rgba(16, 185, 129, 1)',
-                            'rgba(239, 68, 68, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: commonChartOptions
-            });
+            if (document.getElementById('mentalHealthChart')) {
+                const mentalHealthCtx = document.getElementById('mentalHealthChart').getContext('2d');
+                new Chart(mentalHealthCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Giảm Stress', 'Giảm Lo Âu', wrapLabel('Giảm triệu chứng Trầm Cảm', 16), wrapLabel('Tăng Cảm Xúc Tích Cực', 16)],
+                        datasets: [{
+                            label: 'Mức Độ Cải Thiện (%)',
+                            data: [40, 26, 22, 35],
+                            backgroundColor: ['rgba(59, 130, 246, 0.7)', 'rgba(139, 92, 246, 0.7)', 'rgba(16, 185, 129, 0.7)', 'rgba(239, 68, 68, 0.7)'],
+                            borderColor: ['rgba(59, 130, 246, 1)', 'rgba(139, 92, 246, 1)', 'rgba(16, 185, 129, 1)', 'rgba(239, 68, 68, 1)'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: commonChartOptions
+                });
+            }
 
-            const physicalHealthCtx = document.getElementById('physicalHealthChart').getContext('2d');
-            new Chart(physicalHealthCtx, {
-                type: 'radar',
-                data: {
-                    labels: ['Huyết Áp', 'Nhịp Tim', 'Chất Lượng Giấc Ngủ', 'Hệ Miễn Dịch', 'Giảm Viêm'],
-                    datasets: [{
-                        label: 'Mức Độ Cải Thiện (Điểm)',
-                        data: [75, 80, 85, 70, 65],
-                        fill: true,
-                        backgroundColor: 'rgba(59, 130, 246, 0.2)',
-                        borderColor: 'rgb(59, 130, 246)',
-                        pointBackgroundColor: 'rgb(59, 130, 246)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgb(59, 130, 246)'
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        tooltip: {
-                            callbacks: {
-                                title: tooltipTitleCallback
-                            }
+            if (document.getElementById('physicalHealthChart')) {
+                const physicalHealthCtx = document.getElementById('physicalHealthChart').getContext('2d');
+                new Chart(physicalHealthCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Huyết Áp', 'Nhịp Tim', 'Chất Lượng Giấc Ngủ', 'Hệ Miễn Dịch', 'Giảm Viêm'],
+                        datasets: [{
+                            label: 'Mức Độ Cải Thiện (Điểm)',
+                            data: [75, 80, 85, 70, 65],
+                            fill: true,
+                            backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                            borderColor: 'rgb(59, 130, 246)',
+                            pointBackgroundColor: 'rgb(59, 130, 246)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(59, 130, 246)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            tooltip: { callbacks: { title: tooltipTitleCallback }},
+                            legend: { position: 'bottom', labels: { font: { family: "'Be Vietnam Pro', sans-serif" }}}
                         },
-                        legend: {
-                             position: 'bottom',
-                             labels: {
-                                 font: {
-                                     family: "'Be Vietnam Pro', sans-serif"
-                                 }
+                        elements: { line: { borderWidth: 3 }},
+                        scales: {
+                            r: {
+                                angleLines: { color: '#e5e7eb' },
+                                grid: { color: '#e5e7eb' },
+                                pointLabels: { font: { size: 14, family: "'Be Vietnam Pro', sans-serif" }},
+                                ticks: { backdropColor: 'rgba(0,0,0,0)', color: '#6b7280' }
                             }
                         }
-                    },
-                    elements: {
-                        line: {
-                            borderWidth: 3
+                    }
+                });
+            }
+            
+            // --- MÃ JAVASCRIPT MỚI CHO GOATCOUNTER ---
+            function fetchGoatCounterTotal() {
+                const goatCounterCode = 'dhr-phucthanh'; 
+                const apiUrl = `https://${goatCounterCode}.goatcounter.com/counter/total.json`;
+                const countElement = document.getElementById('visitor-count');
+
+                fetch(apiUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
                         }
-                    },
-                     scales: {
-                        r: {
-                          angleLines: {
-                            color: '#e5e7eb'
-                          },
-                          grid: {
-                            color: '#e5e7eb'
-                          },
-                          pointLabels: {
-                            font: {
-                              size: 14,
-                              family: "'Be Vietnam Pro', sans-serif"
-                            }
-                          },
-                          ticks: {
-                            backdropColor: 'rgba(0,0,0,0)',
-                            color: '#6b7280'
-                          }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (countElement && data.total_users !== undefined) {
+                            countElement.textContent = data.total_users.toLocaleString('vi-VN');
                         }
-                      }
-                }
-            });
+                    })
+                    .catch(error => {
+                        console.error('Không thể tải dữ liệu từ GoatCounter:', error);
+                        if(countElement) {
+                            countElement.textContent = "N/A";
+                        }
+                    });
+            }
+
+            // Gọi hàm để lấy dữ liệu sau khi trang đã tải 1 giây để đảm bảo GoatCounter đã đếm xong
+            setTimeout(fetchGoatCounterTotal, 1000);
+
         });
     </script>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const countKey = 'dhr-phucthanh.github.io-v1'; 
-            const visitedFlag = 'hasVisitedPage-v1';
-            const countElement = document.getElementById('visitor-count');
-
-            function updateCount(count) {
-                if (countElement) {
-                    countElement.textContent = count;
-                }
-            }
-            
-            function handleError() {
-                console.error("Lỗi khi kết nối với dịch vụ đếm.");
-                if (countElement) {
-                   // Thay vì ẩn, hiển thị một thông báo lỗi thân thiện hơn
-                   countElement.textContent = 'Không thể tải';
-                }
-            }
-
-            const urlParams = new URLSearchParams(window.location.search);
-            const isDevMode = urlParams.has('dev');
-
-            const hasVisited = localStorage.getItem(visitedFlag);
-
-            if (!hasVisited && !isDevMode) {
-                fetch(`https://api.countapi.xyz/hit/${countKey}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        updateCount(data.value);
-                        localStorage.setItem(visitedFlag, 'true');
-                    })
-                    .catch(handleError);
-            } else {
-                fetch(`https://api.countapi.xyz/get/${countKey}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        updateCount(data.value || 0);
-                    })
-                    .catch(handleError);
-            }
-        });
-    </script>
-
 </body>
 </html>
