@@ -230,7 +230,6 @@
 
     <footer class="text-center py-8 bg-gray-800 text-white mt-12">
         <p>Bắt đầu hành trình của bạn ngay hôm nay để có một cuộc sống bình an và trọn vẹn hơn.</p>
-        
         <p class="mt-4 text-sm text-gray-400">
             Khách thăm viếng: <span id="visitor-count">Đang tải...</span>
         </p>
@@ -443,8 +442,9 @@
             
             function handleError() {
                 console.error("Lỗi khi kết nối với dịch vụ đếm.");
-                if (countElement && countElement.parentElement) {
-                    countElement.parentElement.style.display = 'none';
+                if (countElement) {
+                   // Thay vì ẩn, hiển thị một thông báo lỗi thân thiện hơn
+                   countElement.textContent = 'Không thể tải';
                 }
             }
 
