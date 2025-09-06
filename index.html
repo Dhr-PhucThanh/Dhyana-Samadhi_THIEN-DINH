@@ -231,7 +231,8 @@
     <footer class="text-center py-8 bg-gray-800 text-white mt-12">
         <p>Bắt đầu hành trình của bạn ngay hôm nay để có một cuộc sống bình an và trọn vẹn hơn.</p>
         <p class="mt-4 text-sm text-gray-400">
-            Khách thăm viếng: <span id="visitor-count">...</span>
+            Khách thăm viếng: 
+            <span class="goatcounter-visit-total">...</span>
         </p>
     </footer>
 
@@ -246,7 +247,6 @@
             const iconMuted = document.getElementById('icon-muted');
             const iconPlaying = document.getElementById('icon-playing');
             let isPlaying = false;
-
             if (musicToggle) {
                 musicToggle.addEventListener('click', () => {
                     if (isPlaying) {
@@ -261,7 +261,6 @@
                     isPlaying = !isPlaying;
                 });
             }
-            
             const wrapLabel = (str, maxWidth) => {
                 if (str.length <= maxWidth) return str;
                 const words = str.split(' ');
@@ -277,14 +276,12 @@
                 lines.push(currentLine.trim());
                 return lines;
             };
-
             const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
                 let label = item.chart.data.labels[item.dataIndex];
                 if (Array.isArray(label)) return label.join(' ');
                 return label;
             };
-
             const commonChartOptions = {
                 responsive: true,
                 maintainAspectRatio: false,
@@ -314,7 +311,6 @@
                     }
                 }
             };
-
             if (document.getElementById('mentalHealthChart')) {
                 const mentalHealthCtx = document.getElementById('mentalHealthChart').getContext('2d');
                 new Chart(mentalHealthCtx, {
@@ -332,7 +328,6 @@
                     options: commonChartOptions
                 });
             }
-
             if (document.getElementById('physicalHealthChart')) {
                 const physicalHealthCtx = document.getElementById('physicalHealthChart').getContext('2d');
                 new Chart(physicalHealthCtx, {
@@ -373,37 +368,5 @@
         });
     </script>
     
-    <script>
-        window.addEventListener('load', function() {
-            // Chờ một chút để script của GoatCounter có thời gian chạy
-            setTimeout(function() {
-                const goatCounterCode = 'dhr-phucthanh'; 
-                const apiUrl = `https://${goatCounterCode}.goatcounter.com/counter/total.json`;
-                const countElement = document.getElementById('visitor-count');
-
-                if (!countElement) return;
-
-                fetch(apiUrl)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`Network response was not ok: ${response.statusText}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // GoatCounter trả về 'total_users' cho tổng số khách truy cập duy nhất
-                        if (data.total_users !== undefined) {
-                            countElement.textContent = data.total_users.toLocaleString('vi-VN');
-                        } else {
-                            countElement.textContent = 'N/A';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Không thể tải dữ liệu từ GoatCounter:', error);
-                        countElement.textContent = "Không thể tải";
-                    });
-            }, 1500); // Chờ 1.5 giây
-        });
-    </script>
-</body>
+    </body>
 </html>
