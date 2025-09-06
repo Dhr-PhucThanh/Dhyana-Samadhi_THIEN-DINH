@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hành Trình Thiền Định: Khám Phá Khoa Học &amp; Minh Triết</title>
+    <title>Hành Trình Thiền Định: Khám Phá Khoa Học & Minh Triết</title>
     
     <meta property="og:title" content="Hành Trình Thiền Định: Khám Phá Khoa Học & Minh Triết" />
-    <meta property="og:description" content="Một bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông." />
+    <meta property="og:description" content="Khám phá bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://dhr-phucthanh.github.io/Dhyana-Samadhi_THIEN-DINH/" />
     <meta property="og:image" content="https://dhr-phucthanh.github.io/Dhyana-Samadhi_THIEN-DINH/preview.png" />
@@ -19,13 +19,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <script data-goatcounter="https://dhr-phucthanh.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
-            
     <style>
         body {
             font-family: 'Be Vietnam Pro', sans-serif;
             background-color: #f0f4f8;
+            color: #1f2937;
         }
         .chart-container {
             position: relative;
@@ -40,14 +38,6 @@
             .chart-container {
                 height: 350px;
             }
-        }
-        .flowchart-step {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            flex: 1;
-            padding: 1rem;
         }
         .flowchart-arrow {
             font-size: 2.5rem;
@@ -83,7 +73,7 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="antialiased">
 
     <audio id="background-music" loop>
         <source src="nhac-nen-thien-dinh.mp3" type="audio/mpeg">
@@ -93,9 +83,9 @@
     <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-8 px-4 text-center">
         <div class="container mx-auto">
             <div class="flex items-center justify-center gap-x-4 mb-2 flex-wrap sm:flex-nowrap">
-                <img src="https://github.com/Dhr-PhucThanh/Dhyana-Samadhi_THIEN-DINH/blob/main/Lotus.jpg?raw=true" alt="Lotus Logo" class="h-16 w-16 rounded-full object-cover shadow-lg mb-2 sm:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold uppercase text-center">Hành Trình Thiền Định</h1>
-                <button id="music-toggle" class="p-3 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 focus:outline-none ml-0 sm:ml-4 mt-2 sm:mt-0">
+                <img src="https://github.com/Dhr-PhucThanh/Dhyana-Samadhi_THIEN-DINH/blob/main/Lotus.jpg?raw=true" alt="Biểu tượng Hoa Sen" class="h-16 w-16 rounded-full object-cover shadow-lg mb-2 sm:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold uppercase tracking-wide">Hành Trình Thiền Định</h1>
+                <button id="music-toggle" aria-label="Bật/Tắt nhạc nền" class="p-3 bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 focus:outline-none ml-0 sm:ml-4 mt-2 sm:mt-0">
                     <svg id="icon-muted" class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l-2.25 2.25M19.5 12l2.25-2.25M12.75 4.97v14.06M6.375 9.75l-1.5-1.5m1.5 1.5.75-1.5m-.75 1.5L4.5 9.75m1.5-1.5.75 1.5m0 0L6.75 12m-1.5-1.5L5.25 8.25m9 3.75-3-3m3 3-3 3" />
                     </svg>
@@ -104,16 +94,20 @@
                     </svg>
                 </button>
             </div>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto">Một bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông.</p>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">Khám phá bức tranh toàn cảnh về lợi ích của thiền định qua lăng kính khoa học, y học và các truyền thống minh triết phương Đông.</p>
         </div>
     </header>
 
     <main class="container mx-auto p-4 md:p-8">
+        
         <section class="text-center my-12">
             <h2 class="text-3xl font-bold text-gray-900 mb-4">Thiền Định Là Gì?</h2>
-            <p class="max-w-4xl mx-auto text-lg">Thiền định là một phương pháp thực hành cổ xưa nhằm rèn luyện tâm trí, đưa tâm trở về với trạng thái tĩnh tại, sáng suốt và bình an trong giây phút hiện tại. Đây không chỉ là một kỹ thuật thư giãn mà còn là một con đường sâu sắc để thấu hiểu bản thân và thực tại, được khoa học hiện đại chứng minh mang lại vô vàn lợi ích cho sức khỏe thể chất và tinh thần.</p>
+            <p class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+                Thiền định là pháp thực hành cổ xưa nhằm rèn luyện và đưa tâm trí trở về trạng thái tĩnh tại, sáng suốt và bình an ngay trong khoảnh khắc hiện tại. Không chỉ là một kỹ thuật thư giãn, thiền định còn là một hành trình sâu sắc để thấu hiểu bản thân và thực tại. Khoa học hiện đại đã chứng minh phương pháp này mang lại vô vàn lợi ích cho cả sức khỏe thể chất lẫn tinh thần.
+            </p>
         </section>
-        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center">
                 <span class="text-blue-500 kpi-value">26%</span>
                 <h3 class="text-xl font-semibold mt-3">Giảm Lo Âu</h3>
@@ -127,27 +121,31 @@
             <div class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
                 <span class="text-teal-500 kpi-value">15%</span>
                 <h3 class="text-xl font-semibold mt-3">Tăng Sự Tập Trung</h3>
-                <p class="mt-1 text-gray-600">Chỉ sau vài tuần thực hành, khả năng tập trung và duy trì chú ý trong công việc và học tập đã tăng lên đáng kể.</p>
+                <p class="mt-1 text-gray-600">Chỉ sau vài tuần thực hành, khả năng tập trung và duy trì chú ý trong công việc, học tập đã tăng lên đáng kể.</p>
             </div>
         </section>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-xl shadow-lg p-6">
+            
+            <article class="bg-white rounded-xl shadow-lg p-6">
                 <h3 class="text-2xl font-bold text-center mb-4">Tác Động Lên Sức Khỏe Tinh Thần</h3>
-                <p class="text-center mb-4 text-gray-600">Thiền định giúp điều chỉnh các phản ứng cảm xúc, giảm thiểu tác động tiêu cực của stress và lo âu. Biểu đồ dưới đây thể hiện mức độ cải thiện trung bình sau 8 tuần thực hành thiền chánh niệm.</p>
+                <p class="text-center mb-4 text-gray-600">Thiền định giúp điều chỉnh phản ứng cảm xúc, giảm thiểu tác động tiêu cực của stress. Biểu đồ dưới đây thể hiện mức độ cải thiện trung bình sau 8 tuần thực hành.</p>
                 <div class="chart-container h-80 md:h-96">
                     <canvas id="mentalHealthChart"></canvas>
                 </div>
-            </div>
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold text-center mb-4">Cải Thiện Các Chỉ Số Sức Khỏe Thể Chất</h3>
-                <p class="text-center mb-4 text-gray-600">Việc thực hành đều đặn còn mang lại những thay đổi tích cực cho cơ thể, từ hệ tim mạch đến hệ miễn dịch, giúp cơ thể khỏe mạnh và cân bằng hơn.</p>
+            </article>
+
+            <article class="bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-center mb-4">Cải Thiện Sức Khỏe Thể Chất</h3>
+                <p class="text-center mb-4 text-gray-600">Thực hành đều đặn còn mang lại những thay đổi tích cực cho cơ thể, từ hệ tim mạch đến hệ miễn dịch, giúp cơ thể khỏe mạnh và cân bằng hơn.</p>
                  <div class="chart-container h-80 md:h-96">
                     <canvas id="physicalHealthChart"></canvas>
                 </div>
-            </div>
-            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold text-center mb-4">Tái Cấu Trúc Não Bộ: Một Cái Nhìn Khoa Học</h3>
-                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-600">Thiền định không chỉ làm bạn cảm thấy tốt hơn, nó còn thực sự thay đổi cấu trúc và chức năng của não bộ. Các nghiên cứu hình ảnh cộng hưởng từ (MRI) đã chỉ ra những thay đổi rõ rệt ở các vùng não quan trọng.</p>
+            </article>
+
+            <article class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-center mb-4">Tái Cấu Trúc Não Bộ: Góc Nhìn Khoa Học</h3>
+                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-600">Thiền định không chỉ giúp bạn cảm thấy tốt hơn mà còn thực sự thay đổi cấu trúc và chức năng của não bộ. Các nghiên cứu hình ảnh cộng hưởng từ (fMRI) đã chỉ ra những thay đổi rõ rệt ở các vùng não quan trọng.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                     <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
                         <h4 class="font-bold text-lg text-blue-800">Vỏ não trước trán (Prefrontal Cortex)</h4>
@@ -162,103 +160,134 @@
                         <p class="text-gray-700 mt-1">Tăng mật độ, giúp cải thiện trí nhớ, khả năng học hỏi và điều chỉnh cảm xúc.</p>
                     </div>
                 </div>
-            </div>
-            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold text-center mb-4">Con Đường Giác Ngộ: Vượt Trên Sức Khỏe</h3>
-                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-600">Trong các truyền thống như Phật giáo, thiền định là con đường đưa đến sự giải thoát khỏi khổ đau (Niết Bàn). Con đường này được tóm tắt trong Bát Chánh Đạo và được vun bồi qua ba trụ cột chính: Giới (Đạo đức), Định (Thiền định), và Tuệ (Trí tuệ).</p>
-                <div class="flex flex-col md:flex-row justify-center items-center">
-                    <div class="flowchart-step">
-                        <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3">
-                             <span class="text-4xl">戒</span>
-                        </div>
+            </article>
+
+            <article class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-center mb-4">Con Đường Giác Ngộ: Vượt Trên Lợi Ích Sức Khỏe</h3>
+                <p class="text-center mb-6 max-w-3xl mx-auto text-gray-600">Trong các truyền thống như Phật giáo, thiền định là con đường đưa đến sự giải thoát khỏi khổ đau (Niết Bàn). Con đường này được vun bồi qua ba trụ cột Giới (Đạo đức), Định (Thiền định), và Tuệ (Trí tuệ).</p>
+                <div class="flex flex-col md:flex-row justify-center items-start md:items-center">
+                    <div class="flex-1 flex flex-col items-center text-center p-4">
+                        <div class="w-24 h-24 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-3"><span class="text-4xl">戒</span></div>
                         <h4 class="text-xl font-semibold">Giới (Sīla)</h4>
                         <p class="text-gray-600 mt-1">Nền tảng đạo đức, sống thiện lành, không làm hại mình, hại người.</p>
                     </div>
                     <div class="flowchart-arrow hidden md:block">→</div>
-                     <div class="transform rotate-90 md:hidden flowchart-arrow">→</div>
-                    <div class="flowchart-step">
-                        <div class="w-24 h-24 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-3">
-                              <span class="text-4xl">定</span>
-                        </div>
+                    <div class="transform rotate-90 md:hidden flowchart-arrow self-center my-4">→</div>
+                    <div class="flex-1 flex flex-col items-center text-center p-4">
+                        <div class="w-24 h-24 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mb-3"><span class="text-4xl">定</span></div>
                         <h4 class="text-xl font-semibold">Định (Samādhi)</h4>
-                        <p class="text-gray-600 mt-1">Phát triển sự tập trung, tâm an trụ, vắng lặng, không bị phóng dật.</p>
+                        <p class="text-gray-600 mt-1">Phát triển sự tập trung, giúp tâm an trụ, vắng lặng, không tán loạn.</p>
                     </div>
                     <div class="flowchart-arrow hidden md:block">→</div>
-                     <div class="transform rotate-90 md:hidden flowchart-arrow">→</div>
-                    <div class="flowchart-step">
-                       <div class="w-24 h-24 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-3">
-                              <span class="text-4xl">慧</span>
-                        </div>
+                    <div class="transform rotate-90 md:hidden flowchart-arrow self-center my-4">→</div>
+                    <div class="flex-1 flex flex-col items-center text-center p-4">
+                       <div class="w-24 h-24 bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-3"><span class="text-4xl">慧</span></div>
                         <h4 class="text-xl font-semibold">Tuệ (Paññā)</h4>
-                        <p class="text-gray-600 mt-1">Trí tuệ thấu hiểu bản chất của vạn vật, thấy rõ Vô thường, Khổ, Vô ngã.</p>
+                        <p class="text-gray-600 mt-1">Trí tuệ thấu hiểu bản chất vạn vật, thấy rõ Vô thường, Khổ, Vô ngã.</p>
                     </div>
                 </div>
-            </div>
-            <div class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
+            </article>
+
+            <article class="md:col-span-2 bg-white rounded-xl shadow-lg p-6">
                 <h3 class="text-2xl font-bold text-center mb-4">Bắt Đầu Hành Trình Của Bạn</h3>
-                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-600">Bạn không cần phải trở thành một chuyên gia để bắt đầu. Chỉ với vài phút mỗi ngày, bạn có thể bắt đầu gặt hái những lợi ích đầu tiên. Hãy thử bài tập thiền chánh niệm hơi thở đơn giản sau:</p>
+                <p class="text-center mb-8 max-w-3xl mx-auto text-gray-600">Bạn không cần phải trở thành chuyên gia để bắt đầu. Chỉ với vài phút mỗi ngày, bạn có thể gặt hái những lợi ích đầu tiên. Hãy thử bài tập đơn giản sau:</p>
+                
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="w-full md:w-3/4">
                         <ol class="list-decimal list-inside space-y-4 text-lg">
-                            <li><span class="font-semibold">Chọn một nơi yên tĩnh:</span> Ngồi thoải mái trên ghế hoặc đệm, giữ lưng thẳng nhưng không căng cứng.</li>
-                            <li><span class="font-semibold">Nhắm mắt nhẹ nhàng:</span> Thả lỏng cơ thể, đặc biệt là vai, cổ và cơ mặt.</li>
-                            <li><span class="font-semibold">Quan sát hơi thở (đối với Theravada):</span> Đưa sự chú ý đến hơi thở tự nhiên của bạn. Cảm nhận không khí đi vào và đi ra qua mũi.</li>
-                            <li><span class="font-semibold">Quan sát Đảnh Đầu (đối với Mahayana & Vajrayana):</span> Đưa sự chú ý đến Đảnh Đầu cùng với Niệm và Nghe câu chú. Cảm nhận và Trụ miên mật đến các hiện tượng; nóng hoặc mát, hoặc trì nặng, châm chích trên Đảnh Đầu.</li>
-                            <li><span class="font-semibold">Khi tâm lang thang:</span> Đừng lo lắng. Đây là điều tự nhiên. Nhẹ nhàng nhận biết và rồi lại đưa sự chú ý trở lại với hơi thở hoặc câu niệm chú.</li>
-                            <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Dần dần tăng thời gian khi bạn cảm thấy thoải mái hơn. Sự kiên trì là chìa khóa.</li>
-                            <li><span class="font-semibold">Pháp thực hành tham khảo:</span>
+                            <li><span class="font-semibold">Chọn nơi yên tĩnh:</span> Ngồi thoải mái trên ghế hoặc đệm, giữ lưng thẳng nhưng không căng cứng.</li>
+                            <li><span class="font-semibold">Nhắm mắt nhẹ nhàng:</span> Thả lỏng toàn thân, đặc biệt là vai, cổ và cơ mặt.</li>
+                            <li>
+                                <span class="font-semibold">Chọn đối tượng chú tâm:</span> Tùy theo pháp môn, bạn có thể chọn một trong hai cách:
+                                <ul class="list-disc list-inside mt-2 ml-4 space-y-2 text-base">
+                                    <li><b>Theo truyền thống Theravada (Nguyên Thủy):</b> Đưa sự chú ý đến hơi thở tự nhiên. Cảm nhận không khí đi vào và đi ra qua mũi.</li>
+                                    <li><b>Theo truyền thống Mahayana & Vajrayana (Đại Thừa & Kim Cang Thừa):</b> Đưa sự chú ý lên đỉnh đầu (đảnh đầu), kết hợp với việc niệm và lắng nghe câu chú. Cảm nhận và an trú miên mật vào các hiện tượng như nóng, mát, nặng, hoặc châm chích trên đỉnh đầu.</li>
+                                </ul>
+                            </li>
+                            <li><span class="font-semibold">Khi tâm lang thang:</span> Đây là điều tự nhiên. Hãy nhẹ nhàng nhận biết rằng bạn đang suy nghĩ, rồi lại từ tốn đưa sự chú ý trở về với đối tượng đã chọn.</li>
+                            <li><span class="font-semibold">Bắt đầu với 30 phút:</span> Khi đã quen, bạn có thể tăng dần thời gian. Sự kiên trì chính là chìa khóa.</li>
+                             <li><span class="font-semibold">Tham khảo pháp thực hành chi tiết:</span>
                                 <a href="https://dhr-phucthanh.github.io/Samatha-Samapatti-Dhyana-THIEN-QUAN-CHI/" target="_blank" class="link-noi-bat">Trang Thiền Định Mahayana & Vajrayana</a>
                             </li>
                         </ol>
                     </div>
-                    <div class="w-full md:w-1/4">
+                    <figure class="w-full md:w-1/4">
                         <video class="rounded-lg shadow-lg w-full" autoplay loop muted playsinline>
                             <source src="https://dhr-phucthanh.github.io/Dhyana-Samadhi_THIEN-DINH/meditation-video.webm" type="video/webm">
                             Trình duyệt của bạn không hỗ trợ phát video.
                         </video>
-                    </div>
+                    </figure>
                 </div>
-            </div>
+            </article>
+
         </div>
     </main>
 
     <footer class="text-center py-8 bg-gray-800 text-white mt-12">
-        <p>Bắt đầu hành trình của bạn ngay hôm nay để có một cuộc sống bình an và trọn vẹn hơn.</p>
-        <p class="mt-4 text-sm text-gray-400">
-            Khách thăm viếng: 
-            <span class="goatcounter-visit-total">...</span>
-        </p>
+        <p>© 2024 Hành Trình Thiền Định. Bắt đầu hành trình của bạn ngay hôm nay.</p>
+        <p class="mt-2">Khách viếng thăm: <span id="visitor-count">...</span></p>
     </footer>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ... Mã script cho nút nhạc và biểu đồ ...
-            const music = document.getElementById('background-music');
-            const musicToggle = document.getElementById('music-toggle');
-            const iconMuted = document.getElementById('icon-muted');
-            const iconPlaying = document.getElementById('icon-playing');
-            let isPlaying = false;
-            if (musicToggle) {
+            
+            /**
+             * Module điều khiển nhạc nền
+             */
+            const setupMusicPlayer = () => {
+                const music = document.getElementById('background-music');
+                const musicToggle = document.getElementById('music-toggle');
+                const iconMuted = document.getElementById('icon-muted');
+                const iconPlaying = document.getElementById('icon-playing');
+                
+                if (!music || !musicToggle || !iconMuted || !iconPlaying) return;
+
+                let isPlaying = false;
+
                 musicToggle.addEventListener('click', () => {
+                    isPlaying = !isPlaying;
                     if (isPlaying) {
-                        music.pause();
-                        iconMuted.classList.remove('hidden');
-                        iconPlaying.classList.add('hidden');
-                    } else {
                         music.play();
                         iconMuted.classList.add('hidden');
                         iconPlaying.classList.remove('hidden');
+                    } else {
+                        music.pause();
+                        iconMuted.classList.remove('hidden');
+                        iconPlaying.classList.add('hidden');
                     }
-                    isPlaying = !isPlaying;
                 });
-            }
+            };
+
+            /**
+             * Các cài đặt chung cho biểu đồ Chart.js
+             */
+            const getCommonChartOptions = () => ({
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: "'Be Vietnam Pro', sans-serif", size: 14 }
+                        }
+                    },
+                    tooltip: {
+                        bodyFont: { family: "'Be Vietnam Pro', sans-serif" },
+                        titleFont: { family: "'Be Vietnam Pro', sans-serif" }
+                    }
+                }
+            });
+
+            /**
+             * Hàm tiện ích để ngắt dòng cho các nhãn quá dài trên biểu đồ
+             */
             const wrapLabel = (str, maxWidth) => {
                 if (str.length <= maxWidth) return str;
                 const words = str.split(' ');
                 const lines = [];
                 let currentLine = '';
                 words.forEach(word => {
-                    if ((currentLine + word).length > maxWidth) {
+                    if ((currentLine + ' ' + word).length > maxWidth) {
                         lines.push(currentLine.trim());
                         currentLine = '';
                     }
@@ -267,64 +296,71 @@
                 lines.push(currentLine.trim());
                 return lines;
             };
-            const tooltipTitleCallback = (tooltipItems) => {
-                const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) return label.join(' ');
-                return label;
-            };
-            const commonChartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { font: { family: "'Be Vietnam Pro', sans-serif", size: 14, }}
-                    },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback },
-                        bodyFont: { family: "'Be Vietnam Pro', sans-serif", },
-                        titleFont: { family: "'Be Vietnam Pro', sans-serif", }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) { return value + '%'; },
-                            font: { family: "'Be Vietnam Pro', sans-serif", }
-                        },
-                        grid: { color: '#e5e7eb' }
-                    },
-                    x: {
-                        ticks: { font: { family: "'Be Vietnam Pro', sans-serif", } },
-                        grid: { display: false }
-                    }
-                }
-            };
-            if (document.getElementById('mentalHealthChart')) {
-                const mentalHealthCtx = document.getElementById('mentalHealthChart').getContext('2d');
-                new Chart(mentalHealthCtx, {
+
+            /**
+             * Khởi tạo biểu đồ Sức khỏe Tinh thần (Dạng cột)
+             */
+            const createMentalHealthChart = () => {
+                const ctx = document.getElementById('mentalHealthChart')?.getContext('2d');
+                if (!ctx) return;
+                
+                const commonOptions = getCommonChartOptions();
+                
+                new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Giảm Stress', 'Giảm Lo Âu', wrapLabel('Giảm triệu chứng Trầm Cảm', 16), wrapLabel('Tăng Cảm Xúc Tích Cực', 16)],
+                        labels: ['Giảm Stress', 'Giảm Lo Âu', wrapLabel('Giảm triệu chứng Trầm Cảm', 15), wrapLabel('Tăng Cảm Xúc Tích Cực', 15)],
                         datasets: [{
                             label: 'Mức Độ Cải Thiện (%)',
                             data: [40, 26, 22, 35],
-                            backgroundColor: ['rgba(59, 130, 246, 0.7)', 'rgba(139, 92, 246, 0.7)', 'rgba(16, 185, 129, 0.7)', 'rgba(239, 68, 68, 0.7)'],
-                            borderColor: ['rgba(59, 130, 246, 1)', 'rgba(139, 92, 246, 1)', 'rgba(16, 185, 129, 1)', 'rgba(239, 68, 68, 1)'],
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.7)',
+                                'rgba(139, 92, 246, 0.7)',
+                                'rgba(16, 185, 129, 0.7)',
+                                'rgba(239, 68, 68, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(139, 92, 246, 1)',
+                                'rgba(16, 185, 129, 1)',
+                                'rgba(239, 68, 68, 1)'
+                            ],
                             borderWidth: 1
                         }]
                     },
-                    options: commonChartOptions
+                    options: {
+                        ...commonOptions,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: value => value + '%',
+                                    font: { family: "'Be Vietnam Pro', sans-serif" }
+                                },
+                                grid: { color: '#e5e7eb' }
+                            },
+                            x: {
+                                ticks: { font: { family: "'Be Vietnam Pro', sans-serif" } },
+                                grid: { display: false }
+                            }
+                        }
+                    }
                 });
-            }
-            if (document.getElementById('physicalHealthChart')) {
-                const physicalHealthCtx = document.getElementById('physicalHealthChart').getContext('2d');
-                new Chart(physicalHealthCtx, {
+            };
+
+            /**
+             * Khởi tạo biểu đồ Sức khỏe Thể chất (Dạng radar)
+             */
+            const createPhysicalHealthChart = () => {
+                const ctx = document.getElementById('physicalHealthChart')?.getContext('2d');
+                if (!ctx) return;
+                
+                const commonOptions = getCommonChartOptions();
+                
+                new Chart(ctx, {
                     type: 'radar',
                     data: {
-                        labels: ['Huyết Áp', 'Nhịp Tim', 'Chất Lượng Giấc Ngủ', 'Hệ Miễn Dịch', 'Giảm Viêm'],
+                        labels: ['Huyết Áp', 'Nhịp Tim', 'Giấc Ngủ', 'Hệ Miễn Dịch', 'Giảm Viêm'],
                         datasets: [{
                             label: 'Mức Độ Cải Thiện (Điểm)',
                             data: [75, 80, 85, 70, 65],
@@ -338,13 +374,10 @@
                         }]
                     },
                     options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            tooltip: { callbacks: { title: tooltipTitleCallback }},
-                            legend: { position: 'bottom', labels: { font: { family: "'Be Vietnam Pro', sans-serif" }}}
+                        ...commonOptions,
+                        elements: {
+                            line: { borderWidth: 3 }
                         },
-                        elements: { line: { borderWidth: 3 }},
                         scales: {
                             r: {
                                 angleLines: { color: '#e5e7eb' },
@@ -355,9 +388,46 @@
                         }
                     }
                 });
-            }
+            };
+
+            /**
+             * Module lấy và hiển thị số lượng khách truy cập từ GoatCounter
+             */
+            const setupVisitorCounter = () => {
+                const counterElement = document.getElementById('visitor-count');
+                if (!counterElement) return;
+
+                // URL API của GoatCounter để lấy tổng lượt truy cập.
+                // Thay 'dhr-phucthanh' bằng mã của bạn nếu cần.
+                const apiUrl = 'https://dhr-phucthanh.goatcounter.com/counter/TOTAL.json';
+
+                fetch(apiUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // 'data.count' chứa số liệu đã được định dạng (vd: "1,234")
+                        if (data && data.count) {
+                            counterElement.textContent = data.count;
+                        } else {
+                            counterElement.textContent = 'N/A';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Lỗi khi lấy dữ liệu từ GoatCounter:', error);
+                        counterElement.textContent = 'Không tải được';
+                    });
+            };
+
+            // Khởi chạy các module
+            setupMusicPlayer();
+            createMentalHealthChart();
+            createPhysicalHealthChart();
+            setupVisitorCounter();
         });
     </script>
-
 </body>
 </html>
