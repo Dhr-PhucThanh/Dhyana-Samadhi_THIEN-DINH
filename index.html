@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>Hành Trình Thiền Định: Khám Phá Khoa Học &amp; Minh Triết</title>
     
     <meta property="og:title" content="Hành Trình Thiền Định: Khám Phá Khoa Học & Minh Triết" />
@@ -231,18 +231,17 @@
     <footer class="text-center py-8 bg-gray-800 text-white mt-12">
         <p>Bắt đầu hành trình của bạn ngay hôm nay để có một cuộc sống bình an và trọn vẹn hơn.</p>
         <p class="mt-4 text-sm text-gray-400">
-            Khách thăm viếng: <span id="visitor-count">Đang tải...</span>
+            Khách thăm viếng: 
+            <span class="goatcounter-visit-total">...</span>
         </p>
     </footer>
 
-    
-
-<script data-goatcounter="https://dhr-phucthanh.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://dhr-phucthanh.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ... Mã script cho nút nhạc và biểu đồ ...
+            // ... Mã script cho nút nhạc và biểu đồ không thay đổi ...
             const music = document.getElementById('background-music');
             const musicToggle = document.getElementById('music-toggle');
             const iconMuted = document.getElementById('icon-muted');
@@ -373,34 +372,8 @@
                 });
             }
             
-            // --- MÃ JAVASCRIPT MỚI CHO GOATCOUNTER ---
-            function fetchGoatCounterTotal() {
-                const goatCounterCode = 'dhr-phucthanh'; 
-                const apiUrl = `https://${goatCounterCode}.goatcounter.com/counter/total.json`;
-                const countElement = document.getElementById('visitor-count');
-
-                fetch(apiUrl)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (countElement && data.total_users !== undefined) {
-                            countElement.textContent = data.total_users.toLocaleString('vi-VN');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Không thể tải dữ liệu từ GoatCounter:', error);
-                        if(countElement) {
-                            countElement.textContent = "N/A";
-                        }
-                    });
-            }
-
-            // Gọi hàm để lấy dữ liệu sau khi trang đã tải 1 giây để đảm bảo GoatCounter đã đếm xong
-            setTimeout(fetchGoatCounterTotal, 1000);
+            // Script của GoatCounter sẽ tự tìm và cập nhật các thẻ span có class="goatcounter-visit-total"
+            // nên chúng ta không cần thêm mã JavaScript tùy chỉnh nào nữa.
 
         });
     </script>
